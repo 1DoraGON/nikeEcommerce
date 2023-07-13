@@ -1,12 +1,13 @@
 
-import {Hero} from './components/index'
-import { heroapi } from './data/data.js'
+import {Hero, Sales} from './components/index'
+import { heroapi, popularsales, toprateslaes } from './data/data.js'
 function App() {
-
   return (
     <>
-    <main>
+    <main className='flex flex-col gap-16 relative'>
       <Hero heroapi= {heroapi} />
+      <Sales sales = {popularsales} />
+      <Sales sales = {toprateslaes}/>
     </main>
     </>
   )
