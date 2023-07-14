@@ -7,7 +7,7 @@ function App() {
     <main className='flex flex-col gap-16 relative'>
       <Hero heroapi= {heroapi} />
       <Sales sales = {popularsales} ifExists />
-      <FlexContent endpoint={highlight} />
+      <FlexContent endpoint={highlight} isLeft />
       <Sales sales = {toprateslaes} />
       <FlexContent endpoint={sneaker} />
     </main>
