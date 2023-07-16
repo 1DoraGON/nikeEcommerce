@@ -1,5 +1,7 @@
 import { ShoppingBagIcon, StarIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setAddItemToCart } from '../../app/CartSlice'
 
 const Item = ({
     ifExists,
@@ -13,6 +15,22 @@ const Item = ({
     rating,
     price,
 }) => {
+
+    const dispatch = useDispatch()
+
+    const onAddToCart = () => {
+        const item = {
+            id,
+            color,
+            shadow,
+            title,
+            text,
+            img,
+            btn,
+            price,
+        }
+        dispatch(setAddItemToCart(item))
+    }
   return (
     <>
         <div className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${ifExists? 'justify-items-start' : 'justify-items-center'}  rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105`}>
@@ -29,7 +47,7 @@ const Item = ({
                     </div>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button type='button' className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200'><ShoppingBagIcon className='icon-style text-slate-900' /></button>
+                    <button type='button' className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200'><ShoppingBagIcon className='icon-style text-slate-900' onClick={onAddToCart} /></button>
                     <button type='button' className='bg-white/90 blur-effect-theme button-theme p-0.5 shadow shadow-sky-200 text-sm text-black px-2 py-1'>{btn} </button>
                 </div>
             </div>
