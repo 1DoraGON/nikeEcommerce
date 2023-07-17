@@ -78,3 +78,32 @@
   }
 
 }
+/* Fade-in animation */
+.transition-opacity {
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
+
+/* Slide-in and Slide-out animation */
+.transition-transform {
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

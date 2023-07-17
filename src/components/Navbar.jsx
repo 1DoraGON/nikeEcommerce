@@ -6,7 +6,8 @@ import { setOpenCart } from '../app/CartSlice'
 const Navbar = () => {
   
   const [navState, setNavState] = useState(false)
-  
+  const totalCount = useSelector(selectCartTotalQantity)
+
   const dispatch = useDispatch()
   const onCartToggle = () => {
     dispatch(setOpenCart({
@@ -44,9 +45,9 @@ const Navbar = () => {
             <li className='grid items-center'>
               <HeartIcon className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`} />
             </li>
-            <li className='grid items-center'>
+            <li className='grid items-center' onClick={onCartToggle} >
               <button type='button' className='border-none outline-none active:scale-110 transition-all duration-300 relative'>
-                <ShoppingBagIcon onClick={onCartToggle} className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`} />
+                <ShoppingBagIcon className={`icon-style ${navState && "text-slate-900 transition-all duration-300"}`} />
                 <div className={`absolute top-4 right-0 shadow w-4 h-4 text-[0.65rem] leading-tight font-medium rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-all duration-300 ${navState ? 'bg-slate-900 text-slate-100 shadow-slate-900' : 'bg-slate-100 text-slate-900 shadow-slate-100'}`}>0</div>
               </button>
             </li>
