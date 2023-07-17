@@ -2,8 +2,7 @@ import React from 'react'
 import CartCount from './Cart/CartCount'
 import CartEmpty from './Cart/CartEmpty'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCartState, setCloseCart } from '../app/CartSlice'
-import { selectCartItems } from '../../src1/app/CartSlice'
+import { selectCartItems, selectCartState, setCloseCart } from '../app/CartSlice'
 import CartItems from './Cart/CartItems'
 
 const Cart = () => {
